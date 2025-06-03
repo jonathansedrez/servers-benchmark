@@ -1,9 +1,10 @@
 import { Hono } from "hono";
-const myUUID = crypto.randomUUID();
 
 const app = new Hono();
 
 app.get("/", (c) => {
+  const myUUID = crypto.randomUUID();
+
   return c.text(`Random UUID ${myUUID}`);
 });
 
